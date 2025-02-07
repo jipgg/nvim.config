@@ -1,4 +1,6 @@
-vim.cmd.colorscheme("arctic")
+--require('onedark').load()
+require('neomodern').load()
+-- vim.cmd.colorscheme("kanagawa-dragon")
 -- vim.cmd.colorscheme("modus-vivendi")
 -- vim.cmd.colorscheme("obscure")
 -- vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' })

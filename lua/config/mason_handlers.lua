@@ -3,6 +3,25 @@ local function win_root_dir()-- monkey patch, cons are that the root dir needs t
 end
 local lspconfig = require "lspconfig"
 return {
+    sqls = function ()
+        lspconfig.sqls.setup{
+            settings = {
+                sqls = {
+                    connections = {
+                        {
+                            driver = 'mysql',
+                            dataSourceName = 'root:root@tcp(localhost:3306)/store',
+                        },
+                        {
+                            driver = 'mysql',
+                            dataSourceName = 'root:root@tcp(localhost:3306)/examdb',
+                        }
+                    }
+                }
+            }
+
+        }
+    end,
     zls = function ()
         lspconfig.zls.setup{
         }

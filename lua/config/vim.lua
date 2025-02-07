@@ -25,6 +25,7 @@ vim.opt.autoindent = true
 vim.opt.smartindent = true
 vim.api.nvim_set_option_value("clipboard", "unnamed", {})
 vim.o.fileformats = "dos"
+vim.opt.shell = 'powershell'
 if __VSCODE_NEOVIM_EXT__ then
     vim.o.exrc = false
 else--default

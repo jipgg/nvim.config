@@ -17,7 +17,6 @@ if __MASON_ENSURE_INSTALLED__ then
     mason = {
         "clangd",
         "lua_ls",
-        "cmake",
         "luau_lsp",
         "zls",
     }

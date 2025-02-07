@@ -1,4 +1,5 @@
 return {
+    {'navarasu/onedark.nvim'},
     {'Mofiqul/vscode.nvim'},
     {"zenbones-theme/zenbones.nvim", dependencies = { "rktjmp/lush.nvim" }},
     {"rebelot/kanagawa.nvim"},
@@ -9,11 +10,19 @@ return {
     {"ishan9299/modus-theme-vim", lazy = false, priority =1000},
     {"Shatur/neovim-ayu"},
     {"miffi/apropospriate.nvim"},
-{
-  "rockyzhang24/arctic.nvim",
-  dependencies = { "rktjmp/lush.nvim" },
-  name = "arctic",
-  branch = "main",
-  priority = 1000,
-}
+    {
+        "rockyzhang24/arctic.nvim",
+        dependencies = { "rktjmp/lush.nvim" },
+        name = "arctic",
+        branch = "main",
+        priority = 1000,
+    },
+    {
+        'cdmill/neomodern.nvim',
+        lazy = false,
+        priority = 1000,
+        config = function()
+            require('neomodern').setup{}
+        end
+    }
 }
