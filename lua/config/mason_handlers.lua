@@ -8,14 +8,15 @@ return {
             settings = {
                 sqls = {
                     connections = {
+                        -- {
+                        --     driver = 'mysql',
+                        --     dataSourceName = 'root:root@tcp(localhost:3306)/store',
+                        -- },
                         {
-                            driver = 'mysql',
-                            dataSourceName = 'root:root@tcp(localhost:3306)/store',
+                            driver = 'mssql',
+                            dataSourceName = 'odbc:server=localhost\\SQLEXPRESS;database=master;trusted_connection=true;trustserverconnection=true',
+                            --dataSourceName = 'sqlserver://@localhost/SQLEXPRESS01?database=master&trusted_connection=true',
                         },
-                        {
-                            driver = 'mysql',
-                            dataSourceName = 'root:root@tcp(localhost:3306)/examdb',
-                        }
                     }
                 }
             }

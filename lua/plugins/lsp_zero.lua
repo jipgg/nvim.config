@@ -75,7 +75,7 @@ return {
             end)
 
             require('mason-lspconfig').setup {
-                ensure_installed = {"clangd", "lua_ls", "cmake", "luau_lsp", "csharp_ls"},
+                ensure_installed = require "config.ensure_installed".mason,
                 handlers = require "config.mason_handlers"
         }
         end
