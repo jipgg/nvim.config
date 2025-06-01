@@ -1,7 +1,10 @@
 local util = require "util"
 local telescope_builtin = require('telescope.builtin')
-local dap = require 'dap'
 local set = vim.keymap.set
+
+local function wrap(command)
+    return function() vim.cmd(command) end
+end
 
 set('n', "<leader>dr", vim.lsp.buf.rename)
 set("n", "<leader>gn", vim.cmd.Neogit)
@@ -15,12 +18,16 @@ set('n', "<leader>ao", telescope_builtin.current_buffer_fuzzy_find)
 set('n', "<leader>ad", telescope_builtin.diagnostics)
 set('n', "<leader>ah", telescope_builtin.help_tags)
 set("n", "<leader>al", vim.cmd.Oil)
-set('n', '<leader>dbc', dap.continue)
-set('n', '<leader>dbb', dap.toggle_breakpoint)
-set('n', '<leader>dbi', dap.step_into)
-set('n', '<leader>dbo', dap.step_out)
-set('n', '<leader>dbx', dap.terminate)
 set('n', '<leader>!', util.toggle_background)
+set('n', '<leader>rr', wrap("Rest run"))
+set('n', '<leader>rl', wrap("Rest last"))
+set('n', '<leader>ro', wrap("Rest open"))
+set('n', '<A-k>', vim.diagnostic.open_float)
+
+set('n', '<leader>tn', vim.cmd.tabnew)
+set('n', '<leader>tp', vim.cmd.tabprev)
+set('n', '<leader>to', vim.cmd.tabnext)
+set('n', '<leader>tq', vim.cmd.tabclose)
 
 set('n', '<leader>w', '<C-w>')
 set('t', '<Esc>', '<C-\\><C-n>')

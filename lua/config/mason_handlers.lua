@@ -3,56 +3,48 @@ local function win_root_dir()-- monkey patch, cons are that the root dir needs t
 end
 local lspconfig = require "lspconfig"
 return {
-    sqls = function ()
-        lspconfig.sqls.setup{
-            settings = {
-                sqls = {
-                    connections = {
-                        -- {
-                        --     driver = 'mysql',
-                        --     dataSourceName = 'root:root@tcp(localhost:3306)/store',
-                        -- },
-                        {
-                            driver = 'mssql',
-                            dataSourceName = 'odbc:server=localhost\\SQLEXPRESS;database=master;trusted_connection=true;trustserverconnection=true',
-                            --dataSourceName = 'sqlserver://@localhost/SQLEXPRESS01?database=master&trusted_connection=true',
-                        },
-                    }
-                }
-            }
+  sqls = function ()
+    lspconfig.sqls.setup{
+      settings = {
+        sqls = {
+          connections = {
+            {
+              driver = 'mssql',
+              dataSourceName = 'odbc:server=localhost\\SQLEXPRESS;database=master;trusted_connection=true;trustserverconnection=true',
+            },
+          }
+        }
+      }
+    }
+  end,
+  zls = function ()
+    lspconfig.zls.setup{
 
+    }
+  end,
+  clangd = function()
+    lspconfig.clangd.setup {
+      cmd = {"clangd", "-header-insertion=never"},
+      settings = {
+        ["clangd"] = {
+          completion = {style = "detailed"},
         }
-    end,
-    zls = function ()
-        lspconfig.zls.setup{
-        }
-    end,
-    clangd = function()
-        lspconfig.clangd.setup {
-            cmd = {"clangd", "-header-insertion=never"},
-            settings = {
-                ["clangd"] = {
-                    completion = {style = "detailed"},
-                }
-            }
-        }
-    end,
-    luau_lsp = function()
-        lspconfig.luau_lsp.setup {
-            cmd = {"luau-lsp", "lsp", --[["--definitions=definitions.d.luau"]]},
-            settings = {
-                ["luau-lsp"] = {
-                    platform = {
-                        type = "standard",
-                    },
-                    require = {
-                        mode = "relativeToFile",
-                        -- directoryAliases = {
-                        --     ["legion"] = "./legion_luau/",
-                        -- },
-                    },
-                    sourcemap = {
-                        enabled = false,
+      }
+    }
+  end,
+  luau_lsp = function()
+    lspconfig.luau_lsp.setup {
+      cmd = {"luau-lsp", "lsp", --[["--definitions=definitions.d.luau"]]},
+      settings = {
+        ["luau-lsp"] = {
+          platform = {
+            type = "standard",
+          },
+          require = {
+            mode = "relativeToFile",
+          },
+          sourcemap = {
+            enabled = false,
                         autogenerate = false,
                     },
                     index = {

@@ -1,7 +1,7 @@
 return function(client, bufnr)
-    -- Guard against servers without the signatureHelper capability
-    if client.server_capabilities.signatureHelpProvider then
-        require('lsp-overloads').setup(client, {
+  -- Guard against servers without the signatureHelper capability
+  if client.server_capabilities.signatureHelpProvider then
+    require('lsp-overloads').setup(client, {
             -- UI options are mostly the same as those passed to vim.lsp.util.open_floating_preview
             ui = {
                 border = "single",           -- The border to use for the signature popup window. Accepts same border values as |nvim_open_win()|.
