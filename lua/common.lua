@@ -23,5 +23,23 @@ function M.read_json_file(path)
     if not ok then return nil, content end
     return content
 end
+--- @alias DirectoryIterator fun(): string?, string?
+--- directory iterator
+--- @param dirpath string
+--- @return DirectoryIterator
+function M.subpaths(dirpath)
+    local dir = vim.uv.fs_scandir(dirpath)
+    if not dir then
+        return function() end
+    end
+    return function()
+        local name, type = vim.uv.fs_scandir_next(dir)
+        if name then
+            return name, type
+        else
+            return nil, nil
+        end
+    end
+end
 
 return M

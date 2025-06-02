@@ -1,4 +1,4 @@
-return function(client, bufnr)
+return function(client)
   -- Guard against servers without the signatureHelper capability
   if client.server_capabilities.signatureHelpProvider then
     require('lsp-overloads').setup(client, {

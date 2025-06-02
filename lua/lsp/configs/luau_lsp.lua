@@ -60,7 +60,7 @@ local settings = {
         enabled = false,
     },
 }
-return {
+vim.lsp.config.luau_lsp = {
     cmd = command,
     settings = {["luau-lsp"] = settings},
 }
