@@ -1,0 +1,6 @@
+vim.keymap.set('n', "<leader>dr", vim.lsp.buf.rename)
+vim.keymap.set('n', '<leader>lr', vim.cmd.LspRestart)
+vim.keymap.set('n', '<leader>lx', vim.cmd.LspStop)
+vim.keymap.set('n', '<leader>ls', vim.cmd.LspStart)
+vim.keymap.set('n', '<leader>la', vim.cmd.LspInfo)
+vim.keymap.set('n', '<A-k>', vim.diagnostic.open_float)
