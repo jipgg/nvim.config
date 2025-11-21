@@ -1,5 +1,4 @@
 return {
-  -- Autocompletion plugin
   {
     "hrsh7th/nvim-cmp",
     dependencies = {

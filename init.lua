@@ -1,22 +1,15 @@
-local _, os = pcall(vim.uv.os_uname)
-local sysname = nil
-if os then sysname = os.sysname end
-__WINDOWS__ = (sysname == "Windows_NT") and true or nil
-__LINUX__ = (sysname == "Linux") and true or nil
-__MACOS__ = (sysname == "Darwin") and true or nil
-
+local fs, stdpath = vim.fs, vim.fn.stdpath
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
+require 'load_plugins' ()
 
-require 'lazy_loader'
-require 'neomodern'.load() -- colorscheme
-require 'options'
-require 'keymaps'
-require 'lsps'
+vim.cmd('colorscheme oldworld')
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "json",
-  callback = function(args)
-    vim.bo[args.buf].formatexpr = "v:vim.lsp.formatexpr()"
-  end,
-})
+local config_dir = fs.joinpath(stdpath 'config', 'lua', 'configs')
+for name, type in fs.dir(config_dir) do
+    if type ~= 'file' then goto continue end
+    local path = fs.abspath(fs.joinpath(config_dir, name))
+    local ok, err = pcall(dofile, path)
+    if not ok then vim.print(err) end
+    ::continue::
+end
