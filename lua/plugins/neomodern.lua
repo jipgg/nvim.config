@@ -1,5 +1,5 @@
 return {
-    'cdmill/neomodern.nvim',
+    'casedami/neomodern.nvim',
     lazy = false,
     priority = 1000,
 }

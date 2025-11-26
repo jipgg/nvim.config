@@ -3,7 +3,7 @@ local o = vim.o
 o.nu = true
 o.relativenumber = true
 o.fillchars = 'eob: '
-o.cmdheight = 0
+o.cmdheight = 1
 o.exrc = true
 o.fencs = 'utf-8,utf-16le,default,latin1'
 o.softtabstop = 4
@@ -23,4 +23,6 @@ o.fileencoding = 'utf-8'
 o.signcolumn = "number"
 o.autoindent = true
 o.clipboard = 'unnamed'
+
+vim.api.nvim_set_option_value('clipboard', 'unnamed', {})
 

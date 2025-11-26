@@ -23,13 +23,16 @@ if not is_lazy_installed() then
     assert(install_lazy())
 end
 
+
 return function()
     vim.opt.rtp:prepend(LAZY_PATH)
     local lazy = require 'lazy'
     lazy.setup {
         spec = {
             { import = 'plugins' },
+            { "nvim-treesitter/nvim-treesitter", branch = 'main', lazy = false, build = ":TSUpdate" },
+            { 'Mofiqul/vscode.nvim'},
         },
-        checker = { enabled = false },
+        checker = { enabled = true },
     }
 end
