@@ -6,8 +6,11 @@ o.fillchars = 'eob: '
 o.cmdheight = 1
 o.exrc = true
 o.fencs = 'utf-8,utf-16le,default,latin1'
-o.softtabstop = 4
-o.shiftwidth = 4
+o.softtabstop = 3
+o.shiftwidth = 3
+vim.o.tabstop = 3
+vim.o.shiftwidth = 3
+-- vim.o.expandtab = false
 o.expandtab = true
 o.smartindent = true
 o.wrap = false
@@ -25,4 +28,3 @@ o.autoindent = true
 o.clipboard = 'unnamed'
 
 vim.api.nvim_set_option_value('clipboard', 'unnamed', {})
-
