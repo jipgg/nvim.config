@@ -8,11 +8,13 @@ nvim_treesitter.install {
 	"http",
 	"typescript",
 	"tsx",
+   "latex",
 	"markdown"
 }
 
 vim.api.nvim_create_autocmd('FileType', {
 	pattern = {
+      "tex",
 		'lua',
 		'luau',
 		'cpp',
