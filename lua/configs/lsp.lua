@@ -4,6 +4,7 @@ local create_autocmd = vim.api.nvim_create_autocmd
 lsp.enable {
 	"lua_ls",
 	"clangd",
+   "texlab",
 	-- "csharp_ls",
 	"jsonls",
 	"html",
@@ -39,6 +40,7 @@ create_autocmd("LspAttach", {
 		if not client.server_capabilities.signatureHelpProvider then return end
 
 		local lsp_overloads = require 'lsp-overloads'
+
 
 		--- @diagnostic disable-next-line
 		lsp_overloads.setup(client, {

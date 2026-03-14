@@ -1,5 +1,14 @@
 local tb = require 'telescope.builtin'
 
+local toggle_background = function ()
+   if (vim.o.background == 'light') then
+      vim.o.background = "dark"
+      vim.cmd("colorscheme oldworld")
+   else
+      vim.o.background = "light"
+      require("neomodern").load()
+   end
+end
 ---@alias keymaps table<string, config.keymap.Entry>
 ---@type keymaps
 local keymaps = {
@@ -10,6 +19,7 @@ local keymaps = {
     ['<leader>tp'] = vim.cmd.tabprev,
     ['<leader>to'] = vim.cmd.tabnext,
     ['<leader>tq'] = vim.cmd.tabclose,
+    ['<leader>bg'] = toggle_background,
 
     ['<leader>w'] = '<C-w>',
     ['<Esc>'] = { mode = 't', action = '<C-\\><C-n>' },

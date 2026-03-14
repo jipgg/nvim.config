@@ -17,6 +17,7 @@ vim.api.nvim_create_autocmd('FileType', {
 		'luau',
 		'cpp',
 		'cs',
+      'zig',
 		'python',
 		"http",
 		"typescript",
@@ -25,6 +26,6 @@ vim.api.nvim_create_autocmd('FileType', {
 		"markdown",
 	},
 	callback = function(args)
-		vim.treesitter.start(args.buf)
+      pcall(vim.treesitter.start, args.buf)
 	end
 })

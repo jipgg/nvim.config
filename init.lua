@@ -3,11 +3,11 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 require 'load_plugins' ()
 
-local neomodern = require 'neomodern'
-neomodern.setup {}
-neomodern.load()
+-- local neomodern = require 'neomodern'
+-- neomodern.setup {}
+-- neomodern.load()
 
---vim.cmd('colorscheme poimandres')
+vim.cmd('colorscheme oldworld')
 local config_dir = fs.joinpath(stdpath 'config', 'lua', 'configs')
 for name, type in fs.dir(config_dir) do
   if type ~= 'file' then goto continue end
