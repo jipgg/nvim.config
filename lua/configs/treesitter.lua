@@ -26,6 +26,8 @@ vim.api.nvim_create_autocmd('FileType', {
 		"typescriptreact",
 		"go",
       "odin",
+      "glsl",
+      "just",
 		"markdown",
 	},
 	callback = function(args)

@@ -28,8 +28,6 @@ local keymaps = {
     ['<leader>lf'] = vim.lsp.buf.format,
     ['<A-k>'] = vim.diagnostic.open_float,
 
-    ['<leader>gc'] = tb.git_status,
-    ['<leader>gf'] = tb.git_files,
     ['<leader>aj'] = tb.find_files,
     ['<leader>ai'] = tb.live_grep,
     ['<leader>ak'] = tb.buffers,

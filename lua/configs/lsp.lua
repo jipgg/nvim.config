@@ -19,6 +19,8 @@ lsp.enable {
    "roslyn_ls",
    "gopls",
    "ols",
+   "glsl_analyzer",
+   "just",
 }
 lsp.config.ols = {
    init_options = {

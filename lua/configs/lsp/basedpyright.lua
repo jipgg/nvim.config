@@ -1,5 +1,4 @@
 return {
-   -- cmd = { "basedpyright", "--stdio" },
    settings = {
       basedpyright = {
          analysis = {

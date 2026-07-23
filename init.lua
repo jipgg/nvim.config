@@ -5,7 +5,6 @@ require 'load_plugins' ()
 
 vim.cmd('colorscheme oldworld')
 
-
 local config_dir = fs.joinpath(stdpath 'config', 'lua', 'configs')
 for name, type in fs.dir(config_dir) do
    if type ~= 'file' then goto continue end

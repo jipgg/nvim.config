@@ -17,12 +17,13 @@ return {
             ["<C-k>"]     = { "select_prev", "fallback" },
          },
          completion = {
-            -- menu = {
-            --    draw = {
-            --       -- no kind icon column
-            --       columns = { { "label", "label_description", gap = 1 }, { "kind" } },
-            --    },
-            -- },
+            menu = {
+               -- draw = {
+               --    -- no kind icon column
+               --    columns = { { "label", "label_description", gap = 1 }, { "kind" } },
+               -- },
+               auto_show = false,
+            },
             documentation = { auto_show = true },
          },
          signature = { enabled = true },
