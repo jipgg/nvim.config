@@ -5,7 +5,8 @@ return {
       opts = {
          keymap = {
             preset = "none",
-            ["<C-Space>"] = { "show", "fallback" },
+            ["<C-r>"] = { "show", "fallback" },
+            -- ["<C-Space>"] = { "show", "fallback" },
             ["<C-e>"]     = { "cancel", "fallback" },
             ["<CR>"]      = { "accept", "fallback" },
             ["<M-CR>"]    = { "accept", "fallback" },
